@@ -34,10 +34,20 @@ class job(models.Model): #table
     #experience 
     experience = models.IntegerField(default=1)
 
-
+    #catagroy 
+    Catagroy = models.ForeignKey('catagorys',on_delete=models.CASCADE)
 
     def __str__(self) :
         return self.title
+    
+
+#catagory 
+
+class catagorys(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 
